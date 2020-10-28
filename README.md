@@ -13,7 +13,11 @@ Using this module you can:
 
 File description:
 
-variables.tf contain the input data from secrets.yml and it is flattening some nested objects. output.tf contains just some output variables main.tf contain the resources for managing users, groups, projects. provider.tf specifies the provider and version. secrets.yaml has the most important data like secrets and user/group/project information.
+`variables.tf` contain the input data from `secrets.yml` and it is flattening some nested objects.   
+`output.tf` contains just some output variables.  
+`main.tf` contain the resources for managing users, groups, projects.  
+`provider.tf` specifies the provider and version.  
+`secrets.yaml` has the most important data like secrets and user/group/project information.
 
 Import current gitlab state:
 
