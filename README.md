@@ -7,8 +7,8 @@ Using this module you can:
 2. Create a project
 3. Create a group
 4. Specify namespace (group) for projects
-5.Assign users to groups (and to its projects)
-6.Modify their attributes (This can also break the GitLab project)
+5 .Assign users to groups (and to its projects)
+6 .Modify their attributes 
 
 File description:
 
