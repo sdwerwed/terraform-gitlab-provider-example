@@ -1,14 +1,14 @@
 # Terraform Gitlab Provider Example
-This is a part of code that can be extended for User, Group, and Project Management. The input file is a yml file called secrets.yml, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information.
+This is a part of code that can be extended for User, Group, and Project Management. The input file is a yml file called secrets.yml, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information. You can add new data to yml and the terraform module will create those resourses dynamically.
 
 Using this module you can:
 
-1. Create a new user
-2. Create a project
-3. Create a group
-4. Specify namespace (group) for projects
-5. Assign users to groups (and to its projects)
-6. Modify their attributes 
+1. Create new new users
+2. Create new projects
+3. Create new group
+4. Specify projects for groups
+5. Specify users for group
+6. Modify the resourses
 7. Destory Objects
 
 File description:
