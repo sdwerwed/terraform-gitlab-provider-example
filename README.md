@@ -11,6 +11,10 @@ Using this module you can:
 6. Modify the resourses
 7. Destory Objects
 
+For now you can not do:
+1. Auto syncronize and fix the state drift, manual interaction is needed
+2. Auto import existing resources, manual interaction is needed 
+
 File description:
 
 `variables.tf` contain the input data from `secrets.yml` and it is flattening some nested objects.   
