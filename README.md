@@ -11,7 +11,7 @@ Using this module you can:
 6. Modify the resourses
 7. Destory Objects
 
-For now you can not do:
+For now it does not:
 1. Auto syncronize and fix the state drift, manual interaction is needed
 2. Auto import existing resources, manual interaction is needed 
 
