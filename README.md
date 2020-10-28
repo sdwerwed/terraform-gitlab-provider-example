@@ -1,5 +1,5 @@
 # Terraform Gitlab Provider Example
-This is a part of code that can be extended for User, Group, and Project Management. The input file is a yml file called secrets.yml, in general, it should be encrypted and the key should be secured in a Vault just for testing purposes I have it in plain text as it doesn't contain any real information.
+This is a part of code that can be extended for User, Group, and Project Management. The input file is a yml file called secrets.yml, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information.
 
 Using this module you can:
 
@@ -7,8 +7,9 @@ Using this module you can:
 2. Create a project
 3. Create a group
 4. Specify namespace (group) for projects
-5 .Assign users to groups (and to its projects)
-6 .Modify their attributes 
+5. Assign users to groups (and to its projects)
+6. Modify their attributes 
+7. Destory Objects
 
 File description:
 
@@ -16,19 +17,20 @@ variables.tf contain the input data from secrets.yml and it is flattening some n
 
 Import current gitlab state:
 
-For adding the state of the existing users, projects, groups you will need it to do terraform import and configure the yml file accordingly. It can be automated using a script. You can import a project state using terraform import . You can import a user to a terraform state using terraform import . You can import a group state using terraform import .
+For adding the state of the existing users, projects, groups you will need it to do terraform import and configure the yml file accordingly if you want to do chnages on tht resource. It can be automated using a script but it is not implemented here. You can import a project state using `gitlab_project.example <id>` . You can import a user to a terraform state using `terraform import gitlab_user.example <id>`. You can import a group state using `terraform import gitlab_group.example <id>` .
 
 Issues:
 
-Gitlab provider is not used in Terraform that much as Cloud Providers, it is expected to find some bugs. For example, sometimes it is trying to recreate the resource that already exists and it fails with API error "already exists" in this case, there might be drift on the state, `terraform refresh` might fix it, it is updating the state file according to the physical infrastructure without changing the actual infrastructure.
+Gitlab provider is not used that much as Cloud Providers, it is expected to find some bugs. For example, sometimes it is trying to recreate the resource that already created and it fails with API error "already exists" in this case, there might be drift on the state, `terraform import` should fix it.
+Also if someone modifies the resource in gitlab there will state drift if the resourse exists in terrafom, to fix this run `terraform refresh`, it will update the state file according to the physical infrastructure without changing the actual infrastructure.
 
 Conclusion:
 
-Gitlab provider can be used for gitlab managment but you should be really careful, you might change some values and break the project also it requires time to create fully working modules, I believe it depends on the size of the team.
+Gitlab provider can be used for gitlab managment but the operator should be really careful, the operator might change some values and break the project as there are no contraints, also it requires time to create fully working modules, it will be more usefull as the manual operations takes much more time. 
 
 Next steps:
 
-1. Investigate more and report the issue that is happening sometimes in gitlab_project resource, it is creating correctly the resourse but the state is not correct because of return code 400 while it shouldn't, there is something wrong with API limits.
-2. Enrich the yml file
-3. Auto sync the state while new resources are created manually terraform import
-4. Save the output to a file maybe (probably) using this way terraform plan -out output.tf and terraform apply output.tf
+1. Investigate more and report the issue that is happening sometimes while creating new gitlab_project resource, it is creating the resourse correctly but the state is not correct because of return code 400 with error max limit exceded name and path already exists, but there are not projects with the those names. This is hapenning sometimes and randomly, there might be a gitlab internal dependency.
+2. Enrich the yml file, for adding more arguments
+3. Automate the state  syncronization while new resources are created manually using `terraform import`
+4. Save the changes to a file.
