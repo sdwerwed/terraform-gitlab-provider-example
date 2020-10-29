@@ -28,12 +28,19 @@ File description:
 
 Import current gitlab state:
 
-For adding the state of the existing users, projects, groups you will need it to do terraform import and configure the yml file accordingly if you want to do chnages on tht resource. It can be automated using a script but it is not implemented here. You can import a project state using `gitlab_project.example <id>` . You can import a user to a terraform state using `terraform import gitlab_user.example <id>`. You can import a group state using `terraform import gitlab_group.example <id>` .
+For adding the resource state of the existing users, projects, groups you will need it to do terraform import, and configure the yml file accordingly if you want to do changes on those resources. It can be automated using a script but it is not implemented here.  
+You can import a project state using `terraform import gitlab_project.example <id>`.  
+You can import a user to a terraform state using `terraform import gitlab_user.example <id>`.  
+You can import a group state using `terraform import gitlab_group.example <id>` .
+
+State drift:
+
+If someone modifies the resources in GitLab that is tracked by terraform state, there will state drift, to fix this run `terraform refresh`, it will update the state file according to the physical infrastructure without changing the actual infrastructure.
 
 Issues:
 
-Gitlab provider is not used that much as Cloud Providers, it is expected to find some bugs. For example, sometimes it is trying to recreate the resource that already created and it fails with API error "already exists" in this case, there might be drift on the state, `terraform import` should fix it.
-Also if someone modifies the resource in gitlab there will state drift if the resourse exists in terrafom, to fix this run `terraform refresh`, it will update the state file according to the physical infrastructure without changing the actual infrastructure.
+Gitlab provider is not used that much as Cloud Providers, it is expected to find some bugs. For example, sometimes the POST /api/v4/projects for creating trips it gets `Internal Server Error 500`, it is creating the project just the reponse is lost, so the terraform sends the request again to create the project and gets error `Bad Request 400 already exists`, I will need to report this. 
+
 
 Conclusion:
 
