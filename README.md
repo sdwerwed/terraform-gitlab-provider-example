@@ -55,7 +55,6 @@ Gitlab provider can be used for gitlab managment but the operator should be real
 
 #### Next steps:
 
-1. Report the issue writen above to GitLab community
-2. Enrich the yml file for adding more arguments
-3. Automate the state  syncronization while new resources are created manually using `terraform import`
-4. Save the changes to a file.
+1. Enrich the yml file for adding more arguments
+1. Automate the state  syncronization while new resources are created manually using `terraform import`
+1. Save the changes to a file.
