@@ -58,4 +58,4 @@ Gitlab provider can be used for GitLab management but the operator should be rea
 1. Enrich the yml file for adding more arguments
 1. Automate the state  synchronization while new resources are created manually using `terraform import`
 1. Save the changes to a file.
-1. Generate the resources as a map and not list. With the current state if you delete one user from the beginning of the yml file terraform will see differences to all user resources because they are shifted so it affects all resources, it will work but just it is confusing.
+1. Generate the resources as a map and not list. With the current state if you delete one user from the beginning of the yml file terraform will see differences to all user resources because they are shifted so it affects all resources, it will work but it is confusing.
