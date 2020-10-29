@@ -1,5 +1,5 @@
 # Terraform Gitlab Provider Example
-This is an extendedable terraform module for User, Group, and Project Management. The input file is a yml file called secrets.yml, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information. 
+This is an extendedable terraform module for User, Group, and Project Management. The input file is a yml file called `secrets.yml`, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information. 
 
 You can add new data to yml and the terraform module will create those resourses dynamically.
 
@@ -16,6 +16,13 @@ You can add new data to yml and the terraform module will create those resourses
 #### For now it does not:
 1. Auto syncronize and fix the state drift, manual interaction is needed
 2. Auto import existing resources, manual interaction is needed 
+
+#### Connection setup:
+1. Create access token for GitLab API with admin rights
+2. Add the gitlab api url and token to `secrets.yml`
+3. You can run `terraform apply` and it will create 10 users, 9 projects, 3 groups
+4. If you get API response error look at the issues section below 
+5. Run `terraform destroy` to kill the resourses
 
 #### File description:
 
