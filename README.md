@@ -46,7 +46,7 @@ If someone modifies the resources in GitLab that is tracked by terraform state, 
 
 #### Issues:
 
-Gitlab provider is not used that much as Cloud Providers, it is expected to find some bugs. For example, sometimes the POST /api/v4/projects for creating projects it gets `Internal Server Error 500`, it is creating the project just the reponse is lost, so the terraform sends the request again to create the project and gets error `Bad Request 400 already exists`, I will need to report this. 
+Gitlab provider is not used that much as Cloud Providers, it is expected to find some bugs. For example, sometimes the POST /api/v4/projects for creating projects it gets `Internal Server Error 500`, it is creating the project just the reponse is lost, so the terraform sends the request again to create the project and gets error `Bad Request 400 already exists`, I created an issue [#470](https://github.com/gitlabhq/terraform-provider-gitlab/issues/470)
 
 
 #### Conclusion:
