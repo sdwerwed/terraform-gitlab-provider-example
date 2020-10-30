@@ -2,7 +2,7 @@
 
 # Terraform Gitlab Provider Example
 
-> **_NOTE:_** In the new version count is replaced with for_each, it is easier to do changes without affecting the other resourses when someone removes an index, also the Issue with API error 500 did not happen again, the task 4 in Next steps is complete.
+> **_NOTE:_** In the new version count is replaced with for_each, it is easier to do changes without affecting the other resourses when someone removes an index, also the Issue with API error 500 did not happen again, the task 4 in Next steps is complete. The module looks fully functional and extendable.
 
 
 This is an extendable terraform module for User, Group, and Project Management. The input file is a yml file called `secrets.yml`, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information. 
