@@ -58,7 +58,7 @@ Gitlab provider is not used that much as Cloud Providers, it is expected to find
 
 #### Conclusion:
 
-Gitlab provider can be used for GitLab management but the operator should be really careful, the operator might change some values and break the project as there are no constraints, also it requires time to create fully working modules, it will be more useful once the manual operations take a lot of time. 
+Gitlab provider can be used for GitLab management but the operator should be really careful, the operator might change some values and break the project as there not many constraints, also it requires time to create fully working modules, it will be more useful once the manual operations take a lot of time. 
 
 #### Next steps:
 
