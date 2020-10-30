@@ -2,9 +2,7 @@
 
 # Terraform Gitlab Provider Example
 
-| | |
-|-|-|
-|`NOTE` | In the new version count is replaced with for_each, it is easier to do changes without affecting the other resourses when someone removes an index, also the Issue with API error 500 did not happen again. So the task 4 in Next steps is complete. 
+> **_NOTE:_** In the new version count is replaced with for_each, it is easier to do changes without affecting the other resourses when someone removes an index, also the Issue with API error 500 did not happen again. So the task 4 in Next steps is complete. | 
 
  
 
