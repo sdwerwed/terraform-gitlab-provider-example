@@ -37,14 +37,15 @@ You can add new data to yml and the terraform module will create those resources
 `main.tf` contains the resources for managing users, groups, projects.  
 `provider.tf` specifies the provider and version.  
 `versions.tf` specifies the terraform version.  
-`secrets.yaml` has the most important data like secrets and user/group/project information.
+`secrets.yaml` has the most important data like secrets and user/group/project information.  
 
 #### Import current gitlab state:
 
 For adding the resource state of the existing users, projects, groups you will need it to do terraform import, and configure the yml file accordingly if you want to do changes on those resources. It can be automated using a script but it is not implemented here.  
-You can import a project state using `terraform import gitlab_project.example <id>`.  
-You can import a user to a terraform state using `terraform import gitlab_user.example <id>`.  
-You can import a group state using `terraform import gitlab_group.example <id>` .
+You can import a project state using `terraform import gitlab_project.map <id>`.  
+You can import a user to a terraform state using `terraform import gitlab_user.map <id>`.  
+You can import a group state using `terraform import gitlab_group.map <id>`.  
+You can import a membership state using `terraform import gitlab_group_membership.map "group_id:user_id"`
 
 #### State drift:
 
