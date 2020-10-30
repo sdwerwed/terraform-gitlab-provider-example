@@ -1,4 +1,12 @@
+
+
 # Terraform Gitlab Provider Example
+---
+| | |
+|-|-|
+|`NOTE` |
+In the new version count is replaced with for_each, it is easier to do changes without affecting the other resourses when someone removes an index, also the Issue with API error 500 did not happen again. So the task 4 in Next steps is complete.  
+---
 This is an extendable terraform module for User, Group, and Project Management. The input file is a yml file called `secrets.yml`, in general, it should be encrypted and the key should be secured in a Vault, just for testing purposes I have it in plain text as it doesn't contain any real information. 
 
 You can add new data to yml and the terraform module will create those resources dynamically.
@@ -58,4 +66,4 @@ Gitlab provider can be used for GitLab management but the operator should be rea
 1. Enrich the yml file for adding more arguments
 1. Automate the state  synchronization while new resources are created manually using `terraform import`
 1. Save the changes to a file.
-1. Generate the resources as a map and not list. With the current state if you delete one user from the beginning of the yml file terraform will see differences to all user resources because they are shifted so it affects all resources, it will work but it is confusing.
+1. (Complete) Generate the resources as a map and not list. With the current state if you delete one user from the beginning of the yml file terraform will see differences to all user resources because they are shifted so it affects all resources, it will work but it is confusing.
